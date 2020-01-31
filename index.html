@@ -11,27 +11,27 @@
 #slider {
   position: absolute;
   top: 70px;
-  right: 670px;
+  left: 450px;
   z-index: -1
 }
 
 #myCanvas {
   position: absolute;
-  top: -80px;
-
+  top: -20px;
+  left: 0px;
   z-index: 1;
   pointer-events: none;
 }
-
 </style>
 
 </head>
 <body>
     <div id="container">
-      <canvas id="myCanvas" width="600" height="800"></canvas>
+      <canvas id="myCanvas" width="800" height="800"></canvas>
       <div id="slider"></div>
     </div>
 <script>
+
 var lines = [
     'Vicious Cyclist',
     '',
@@ -66,7 +66,7 @@ var lines = [
     'cyclopes and grendels to devour you like flesh from a rib',
     '',
     'It seems you will never again accompany me to that',
-    'somnolent spot where two rivers meet.']  
+    'mist-shrouded spot where two rivers meet.']  
 
 function draw(angle) {
     var canvas = document.getElementById("myCanvas");
@@ -75,8 +75,9 @@ function draw(angle) {
 
     var rotation = 9;
     var totalRotation = 0;
-    context.font = "14px Serif";
-	context.save();
+
+    context.save();
+    context.font = "18px Serif";
     context.translate(-300, 400);
     context.rotate(-angle*Math.PI/180);
 
@@ -86,8 +87,8 @@ function draw(angle) {
         context.fillText(line, 400, 0);
         context.rotate(rotation * Math.PI / 180);
         totalRotation += rotation;
-	})
-	context.restore();
+    })
+    context.restore();
 };
 
 function redraw() {
@@ -101,7 +102,8 @@ function onChange(e) {
 }
 
 $("#slider").roundSlider({
-    radius: 250,
+    radius: 300,
+    width: 30,
     circleShape: "half-right",
     sliderType: "min-range",
     showTooltip: false,
@@ -113,17 +115,15 @@ $("#slider").roundSlider({
     step: 1
 });
 
-redraw();
-
-function down() {
+function down(amt) {
     var value = $('#slider').roundSlider('getValue');
-    $('#slider').roundSlider('setValue', value + 5);
+    $('#slider').roundSlider('setValue', value + amt);
     redraw();
 }
 
-function up() {
+function up(amt) {
     var value = $('#slider').roundSlider('getValue');
-    $('#slider').roundSlider('setValue', value - 5);
+    $('#slider').roundSlider('setValue', value - amt);
     redraw();
 }
 
@@ -131,18 +131,18 @@ document.addEventListener('keydown', function(event) {
   switch (event.key) {
     case "s":
       // code for "down arrow" key press.
-      down();
+      down(5);
       break;
     case "w":
       // code for "up arrow" key press.
-      up();
+      up(5);
       break;
     default:
       return; // Quit when this doesn't handle the key event.
   }
 });
 
-
+redraw();
 </script>
 </body>
 </html>
