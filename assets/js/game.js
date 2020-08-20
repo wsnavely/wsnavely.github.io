@@ -21,8 +21,8 @@ var game = new Phaser.Game(config);
 
 var objects;
 var theme = {
-  bg: 0xd73bb9,
-  fg: 0xfac7f0,
+  bg: 0x3a84e9,
+  fg: 0x89d4f3,
   left_panel: 0x3a84e9,
   right_panel: 0xb2905d,
   button_bg: 0x99dbf3,
