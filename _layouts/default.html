@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Birthday Bash</title>
+    <title>I like having fun</title>
 
     <link
       rel="stylesheet"
@@ -18,21 +18,10 @@
 
   <body>
     <div class="container-fluid">
-      <div class="row">
+      <div class="row">       
         <div class="col-md-12">
-          <div class="page-header">
-            <h1>Birthday Bash</h1>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <p>
-            Hi Charlotte. I hope you are having a nice birthday. I made this
-            little game that might be fun to play with sometime. Love you and
-            miss you.
-          </p>
-          <p>
-            - 叔叔
-          </p>
+          <div class="col maintext mr-2">
+            {{content}}
         </div>
       </div>
       <div class="row">
@@ -62,9 +51,6 @@
       crossorigin="anonymous"
     ></script>
 
-    {% for script in page.scripts %}
-    <script src="{{script}}"></script>
-    {% endfor %}
     <script src="/assets/js/game.js"></script>
   </body>
 </html>

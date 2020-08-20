@@ -1,7 +1,7 @@
 var config = {
   type: Phaser.AUTO,
   width: 1000,
-  height: 600,
+  height: 635,
   parent: "game",
   transparent: true,
   scene: {
@@ -42,7 +42,6 @@ function preload() {
   this.load.image("bg", "/assets/images/bg.png");
   this.load.image("fg", "/assets/images/fg.png");
   this.load.image("left_panel", "/assets/images/left_panel.png");
-  this.load.image("right_panel", "/assets/images/right_panel.png");
   this.load.image("button_bg", "/assets/images/button_bg.png");
   this.load.image("r2_button", "/assets/images/r2button.png");
   this.load.image("r2_note", "/assets/images/r2note.png");
@@ -55,15 +54,8 @@ function preload() {
   this.load.image("spacenote", "/assets/images/spacenote.png");
   this.load.image("linenote", "/assets/images/linenote.png");
   this.load.image("panda", "/assets/images/panda.png");
+  this.load.image("bomb", "/assets/images/bomb.png");
 
-  this.load.spritesheet(
-    "rainbow_ss",
-    "/assets/images/rainbow_spritesheet.png",
-    {
-      frameWidth: 105,
-      frameHeight: 105,
-    }
-  );
   this.load.audioSprite(
     "r2_voice_treble",
     "/assets/audio/r2_audio_sprite.json",
@@ -260,6 +252,20 @@ function playback(scene, onComplete) {
   playBackTimeline.play();
 }
 
+function clearScore() {
+  var index;
+  for (index = 0; index < scoreLength; index++) {
+    if (score.treble[index]) {
+      score.treble[index].icon.destroy();
+      score.treble[index] = null;
+    }
+    if (score.bass[index]) {
+      score.bass[index].icon.destroy();
+      score.bass[index] = null;
+    }
+  }
+}
+
 function create() {
   var scene = this;
 
@@ -275,6 +281,8 @@ function create() {
     button3_icon: this.add.image(87, 313, "goose_button"),
     button4: this.add.image(35, 380, "button_bg").setOrigin(0, 0),
     button4_icon: this.add.image(90, 430, "play"),
+    button5: this.add.image(35, 495, "button_bg").setOrigin(0, 0),
+    button5_icon: this.add.image(90, 549, "bomb"),
     clefs: this.add.image(0, 0, "clefs").setOrigin(0, 0),
   };
 
@@ -393,6 +401,12 @@ function create() {
       playback(scene, function () {
         objects.button4.setTint(theme.button_bg);
       });
+    }
+  });
+
+  objects.button5.setInteractive().on("pointerdown", function () {
+    if (!isPlaying) {
+      clearScore();
     }
   });
 }
