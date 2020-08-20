@@ -1,0 +1,37 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "jekyll build",
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c", "C:\\Ruby26-x64\\bin\\setrbvars.cmd", "&"]
+        },
+        "cwd": "${workspaceFolder}"
+      },
+      "type": "shell",
+      "command": "bundle exec jekyll build",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+
+    {
+      "label": "jekyll serve",
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c", "C:\\Ruby26-x64\\bin\\setrbvars.cmd", "&"]
+        },
+        "cwd": "${workspaceFolder}"
+      },
+      "type": "shell",
+      "command": "bundle exec jekyll serve --watch"
+    }
+  ]
+}
