@@ -6,92 +6,92 @@
   "spritemap": {
     "g0": {
       "start": 0,
-      "end": 0.4,
+      "end": 0.2,
       "loop": false
     },
     "a0": {
       "start": 0.5,
-      "end": 0.9,
+      "end": 0.7,
       "loop": false
     },
     "b0": {
       "start": 1.0,
-      "end": 1.4,
+      "end": 1.2,
       "loop": false
     },
     "c0": {
       "start": 1.5,
-      "end": 1.9,
+      "end": 1.7,
       "loop": false
     },
     "d0": {
       "start": 2.0,
-      "end": 2.4,
+      "end": 2.2,
       "loop": false
     },
     "e0": {
       "start": 2.5,
-      "end": 2.9,
+      "end": 2.7,
       "loop": false
     },
     "f0": {
       "start": 3.0,
-      "end": 3.4,
+      "end": 3.2,
       "loop": false
     },
     "g1": {
       "start": 3.5,
-      "end": 3.9,
+      "end": 3.7,
       "loop": false
     },
     "a1": {
       "start": 4.0,
-      "end": 4.4,
+      "end": 4.2,
       "loop": false
     },
     "e1": {
       "start": 4.5,
-      "end": 4.9,
+      "end": 4.7,
       "loop": false
     },
     "f1": {
       "start": 5.0,
-      "end": 5.4,
+      "end": 5.2,
       "loop": false
     },
     "g2": {
       "start": 5.5,
-      "end": 5.9,
+      "end": 5.7,
       "loop": false
     },
     "a2": {
       "start": 6.0,
-      "end": 6.4,
+      "end": 6.2,
       "loop": false
     },
     "b2": {
       "start": 6.5,
-      "end": 6.9,
+      "end": 6.7,
       "loop": false
     },
     "c2": {
       "start":7.0,
-      "end": 7.4,
+      "end": 7.2,
       "loop": false
     },
     "d2": {
       "start": 7.5,
-      "end": 7.9,
+      "end": 7.7,
       "loop": false
     },
     "e2": {
       "start": 8.0,
-      "end": 8.4,
+      "end": 8.2,
       "loop": false
     },
     "f2": {
       "start": 8.5,
-      "end": 8.9,
+      "end": 8.7,
       "loop": false
     }
   }
