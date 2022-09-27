@@ -1,6 +1,5 @@
 {
   "resources": [
-    "/assets/audio/SoundEffects/guitar_audio_sprite.ogg",
     "/assets/audio/SoundEffects/guitar_audio_sprite.mp3"
   ],
   "spritemap": {
